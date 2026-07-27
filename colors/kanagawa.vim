@@ -96,7 +96,7 @@ let g:kanagawa_bold = get(g:, "kanagawa_bold", 1)
 let s:bold = (g:kanagawa_bold == 0) ? "" : "bold,"
 let g:kanagawa_underline = get(g:, "kanagawa_underline", 1)
 let s:underline = (g:kanagawa_underline == 0) ? "NONE," : "underline,"
-let g:kanagawa_italic = get(g:, "kanagawa_italic", (has("gui_gunning") || $TERM_ITALICS == "true"))
+let g:kanagawa_italic = get(g:, "kanagawa_italic", (has("gui_running") || $TERM_ITALICS == "true"))
 let s:italic = (g:kanagawa_italic == 0) ? "" : "italic,"
 let g:kanagawa_italic_comments = get(g:, "kanagawa_italic_comments", 0)
 let s:italicize_comments = (g:kanagawa_italic_comments == 0) ? "" : get(s:, "italic")
@@ -150,11 +150,11 @@ call s:hi("Underline", "", "", "", "", s:underline, "")
 
 " Editor
 call s:hi("ColorColumn", "", s:kanagawa1_gui, "NONE", s:kanagawa1_term, "", "")
-call s:hi("Cursor", s:kanagawa0_gui, s:kanagawa4_gui, "", "NONE", "", "")
+call s:hi("Cursor", s:kanagawa7_gui, s:kanagawa7_gui, "", "NONE", "", "")
 call s:hi("CursorLine", "", s:kanagawa1_gui, "NONE", s:kanagawa1_term, "NONE", "")
 call s:hi("Error", s:kanagawa4_gui, s:kanagawa11_gui, "", s:kanagawa11_term, "", "")
 call s:hi("iCursor", s:kanagawa0_gui, s:kanagawa4_gui, "", "NONE", "", "")
-call s:hi("LineNr", s:kanagawa3_gui, "NONE", s:kanagawa3_term, "NONE", "", "")
+call s:hi("LineNr", s:kanagawa3_gui, s:kanagawa1_gui, s:kanagawa3_term, s:kanagawa1_term, "", "")
 call s:hi("MatchParen", s:kanagawa8_gui, s:kanagawa3_gui, s:kanagawa8_term, s:kanagawa3_term, "", "")
 call s:hi("NonText", s:kanagawa2_gui, "", s:kanagawa3_term, "", "", "")
 call s:hi("Normal", s:kanagawa4_gui, s:kanagawa0_gui, "NONE", "NONE", "", "")
@@ -213,7 +213,7 @@ if has('nvim')
     call s:hi("DiagnosticUnderlineWarn",  s:kanagawa13_gui, "", s:kanagawa13_term, "", "undercurl", "")
     call s:hi("DiagnosticUnderlineError", s:kanagawa11_gui, "", s:kanagawa11_term, "", "undercurl", "")
     call s:hi("DiagnosticUnderlineInfo",  s:kanagawa8_gui,  "", s:kanagawa8_term,  "", "undercurl", "")
-    call s:hi("DiagnosticUnderlineHint",  s:kanagawa10_gui  "", s:kanagawa10_term, "", "undercurl", "")
+    call s:hi("DiagnosticUnderlineHint",  s:kanagawa10_gui, "", s:kanagawa10_term, "", "undercurl", "")
 
     "+- Neovim DocumentHighlight -+
     call s:hi("LspReferenceText",  "", s:kanagawa3_gui, "", s:kanagawa3_term, "", "")
@@ -226,15 +226,15 @@ endif
 
 "+--- Gutter ---+
 call s:hi("CursorColumn", "", s:kanagawa1_gui, "NONE", s:kanagawa1_term, "", "")
-if g:nord_cursor_line_number_background == 0
-    call s:hi("CursorLineNr", s:kanagawa4_gui, "", "NONE", "", "NONE", "")
+if g:kanagawa_cursor_line_number_background == 0
+    call s:hi("CursorLineNr", s:kanagawa4_gui, s:kanagawa1_gui, "NONE", s:kanagawa1_term, "NONE", "")
 else
     call s:hi("CursorLineNr", s:kanagawa4_gui, s:kanagawa1_gui, "NONE", s:kanagawa1_term, "NONE", "")
 endif
 
 call s:hi("Folded",     s:kanagawa3_gui, s:kanagawa1_gui, s:kanagawa3_term, s:kanagawa1_term, s:bold, "")
-call s:hi("FoldColumn", s:kanagawa3_gui, s:kanagawa0_gui, s:kanagawa3_term, "NONE", "", "")
-call s:hi("SignColumn", s:kanagawa1_gui, s:kanagawa0_gui, s:kanagawa1_term, "NONE", "", "")
+call s:hi("FoldColumn", s:kanagawa3_gui, s:kanagawa1_gui, s:kanagawa3_term, s:kanagawa1_term, "", "")
+call s:hi("SignColumn", s:kanagawa1_gui, s:kanagawa1_gui, s:kanagawa1_term, s:kanagawa1_term, "", "")
 
 "+--- Navigation ---+
 call s:hi("Directory", s:kanagawa8_gui, "", s:kanagawa8_term, "NONE", "", "")
@@ -286,33 +286,33 @@ call s:hi("Boolean",     s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
 call s:hi("Character",   s:kanagawa14_gui, "", s:kanagawa14_term, "", "", "")
 call s:hi("Comment",     s:kanagawa3_gui_bright, "", s:kanagawa3_term, "", s:italicize_comments, "")
 call s:hi("Conceal",     "", "NONE", "", "NONE", "", "")
-call s:hi("Conditional", s:kanagawa9_gui,  "", s:kanagawa9_term, "", "", "")
+call s:hi("Conditional", s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
 call s:hi("Constant",    s:kanagawa4_gui,  "", "NONE", "", "", "")
 call s:hi("Decorator",   s:kanagawa12_gui, "", s:kanagawa12_term, "", "", "")
-call s:hi("Define",      s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
+call s:hi("Define",      s:kanagawa11_gui, "", s:kanagawa11_term, "", "", "")
 call s:hi("Delimiter",   s:kanagawa6_gui,  "", s:kanagawa6_term,  "", "", "")
-call s:hi("Exception",   s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
+call s:hi("Exception",   s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
 call s:hi("Float",       s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
 call s:hi("Function",    s:kanagawa8_gui,  "", s:kanagawa8_term,  "", "", "")
 call s:hi("Identifier",  s:kanagawa4_gui,  "", "NONE", "", "NONE", "")
-call s:hi("Include",  s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
-call s:hi("Keyword",  s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
-call s:hi("Label",    s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
-call s:hi("Number",   s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
-call s:hi("Operator", s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "NONE", "")
-call s:hi("PreProc",  s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "NONE", "")
-call s:hi("Repeat",   s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
-call s:hi("Special",  s:kanagawa4_gui,  "", "NONE", "", "", "")
+call s:hi("Include",     s:kanagawa11_gui, "", s:kanagawa11_term, "", "", "")
+call s:hi("Keyword",     s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
+call s:hi("Label",       s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
+call s:hi("Number",      s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
+call s:hi("Operator",    s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "NONE", "")
+call s:hi("PreProc",     s:kanagawa11_gui, "", s:kanagawa11_term, "", "NONE", "")
+call s:hi("Repeat",      s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
+call s:hi("Special",     s:kanagawa4_gui,  "", "NONE", "", "", "")
 call s:hi("SpecialChar",    s:kanagawa13_gui, "", s:kanagawa13_term, "", "", "")
 call s:hi("SpecialComment", s:kanagawa8_gui,  "", s:kanagawa8_term, "", s:italicize_comments, "")
-call s:hi("Statement",      s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
-call s:hi("StorageClass",   s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
+call s:hi("Statement",      s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
+call s:hi("StorageClass",   s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
 call s:hi("String",         s:kanagawa14_gui, "", s:kanagawa14_term, "", "", "")
-call s:hi("Structure",      s:kanagawa9_gui,  "", s:kanagawa9_term,  "", "", "")
+call s:hi("Structure",      s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
 call s:hi("Tag",            s:kanagawa4_gui,  "", "", "", "", "")
 call s:hi("Todo",           s:kanagawa3_gui,  "NONE", s:kanagawa13_term, "NONE", "", "")
 call s:hi("Type",           s:kanagawa9_gui,  "", s:kanagawa9_term, "", "NONE", "")
-call s:hi("Typedef",        s:kanagawa9_gui,  "", s:kanagawa9_term, "", "", "")
+call s:hi("Typedef",        s:kanagawa15_gui, "", s:kanagawa15_term, "", "", "")
 
 hi! link Annotation Decorator
 hi! link Macro Define
