@@ -8,7 +8,7 @@
 #### vim-pluig: 
 ``` vim
 call plug#begin('~/.vim/plugged')
-    Plug 'deltadev-rsc/Knagawa.vim'
+    Plug 'deltadev-rsc/Kanagawa.vim'
 call plug#end()
 ```
 #### для остальных плагин менеджеров думаю вы знаете как ставить плагины.
