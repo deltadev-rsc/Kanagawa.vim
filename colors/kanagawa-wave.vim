@@ -4,6 +4,8 @@
 " | And with airline/lightline theme support                  |
 " =============================================================
 
+" Kanagawa Wave theme variant
+
 if version > 580
     hi clear
     if exists("syntax_on")
@@ -11,7 +13,7 @@ if version > 580
     endif
 endif
 
-let g:colors_name = "kanagawa"
+let g:colors_name = "kanagawa_wave"
 let s:kanagawa_vim_verison = "0.0.1"
 set background=dark
 
