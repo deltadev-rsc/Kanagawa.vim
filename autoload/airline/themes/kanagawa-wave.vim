@@ -1,4 +1,4 @@
-let g:airline#themes#kanagawa_wave#palette = {}
+let g:airline#themes#kanagawa-wave#palette = {}
 
 let s:kanagawa0_gui  = "#1f1f28"
 let s:kanagawa1_gui  = "#2a2a37"
