@@ -1,4 +1,4 @@
-let g:airline#themes#kanagawa_dragon#palette = {}
+let g:airline#themes#kanagawa-dragon#palette = {}
 
 " --- Kanagawa Dragon Palette ---
 let s:kanagawa0_gui  = "#16161d" " Deepest background
