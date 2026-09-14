@@ -14,15 +14,15 @@ set background=dark
 " +-----------+
 " | truecolor |
 " +-----------+
-let s:backgound = "#16161d"
-let s:foreground = "#DCD7BA"
-let s:selection_background = "#2a2a37"
-let s:selection_foreground = "#C8C093"
+let s:backgound = "#181616"
+let s:foreground = "#c5c9c5"
+let s:selection_background = "#2d4f67"
+let s:selection_foreground = "#c8c093"
 let s:cursor = "#C8C093"
-let s:cursor_text = "#16161d"
+let s:cursor_text = "#181616"
 let s:url = "#7E9CD8"
 
-let s:kanagawa0_gui = "#16161d"
+let s:kanagawa0_gui = "#181616"
 let s:kanagawa1_gui = "#1f1f28"
 let s:kanagawa2_gui = "#2a2a37"
 let s:kanagawa3_gui = "#363646"
