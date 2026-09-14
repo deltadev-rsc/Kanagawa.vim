@@ -1,4 +1,4 @@
-let g:airline#themes#kanagawa_lotus#palette = {}
+let g:airline#themes#kanagawa-lotus#palette = {}
 
 " --- Kanagawa Lotus Palette ---
 let s:kanagawa0_gui  = "#48485a" " Darkest (used for errors in light mode)
