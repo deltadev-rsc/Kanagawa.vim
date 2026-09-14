@@ -43,3 +43,5 @@ let s:p.tabline.left =   [ [s:kanagawa5, s:kanagawa3] ]
 let s:p.tabline.middle = [ [s:kanagawa5, s:kanagawa3] ]
 let s:p.tabline.right =  [ [s:kanagawa5, s:kanagawa3] ]
 let s:p.tabline.tabsel = [ [s:kanagawa1, s:kanagawa8] ]
+
+let g:lightline#colorscheme#kanagawa_wave#palette = lightline#colorscheme#flatten(s:p)
